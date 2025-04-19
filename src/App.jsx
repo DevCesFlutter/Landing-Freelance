@@ -1,12 +1,8 @@
 import React, { useEffect } from "react";
 import "./styles/index.css";
-
-import Header from "./components/Header";
-import HeroSection from "./components/HeroSection";
-import ProductsSection from "./components/ProductsSection";
-import AboutSection from "./components/AboutSection";
-import ContactSection from "./components/ContactSection";
-import Footer from "./components/Footer";
+import HomePage from "./pages/HomePage";
+import { Routes, Route } from "react-router-dom";
+import ProductosPage from "./pages/ProductosPage";
 
 const App = () => {
   useEffect(() => {
@@ -15,14 +11,10 @@ const App = () => {
 
   return (
     <>
-      <Header />
-      <main className="font-sans text-gray-800 scroll-smooth">
-        <HeroSection />
-        <ProductsSection />
-        <AboutSection />
-        <ContactSection />
-      </main>
-      <Footer />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/ProductosPage" element={<ProductosPage />} />
+      </Routes>
     </>
   );
 };

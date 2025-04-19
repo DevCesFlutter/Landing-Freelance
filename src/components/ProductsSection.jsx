@@ -1,26 +1,48 @@
-const products = [
-  { name: "Alimentos", color: "bg-purple-300" },
-  { name: "Bebidas", color: "bg-blue-300" },
-  { name: "Huevos", color: "bg-purple-300" },
-  { name: "Aseo", color: "bg-blue-300" },
-];
+import React from "react";
+import { useNavigate } from "react-router-dom";
 
-const ProductsSection = () => (
-  <section id="productos" className="py-20 bg-white">
-    <div className="max-w-7xl mx-auto px-4 text-center">
-      <h2 className="text-2xl font-bold mb-10">Nuestros Productos</h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
-        {products.map((item, index) => (
+const ProductsSection = () => {
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate("/ProductosPage");
+  };
+
+  return (
+    <section id="productos" className="py-20 bg-white">
+      <div className="max-w-7xl mx-auto px-4 text-center">
+        <h2 className="text-2xl font-bold mb-10">Nuestros Productos</h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
           <div
-            key={index}
-            className={`${item.color} rounded-lg p-6 shadow hover:scale-105 transition-transform`}
+            onClick={handleClick}
+            className="bg-purple-300 rounded-lg p-6 shadow hover:scale-105 transition-transform cursor-pointer"
           >
-            <h3 className="text-lg font-semibold">{item.name}</h3>
+            <h3 className="text-lg font-semibold">Alimentos</h3>
           </div>
-        ))}
+          <div
+            onClick={handleClick}
+            className="bg-green-300 rounded-lg p-6 shadow hover:scale-105 transition-transform cursor-pointer"
+          >
+            <h3 className="text-lg font-semibold">Utiles de aseo</h3>
+          </div>
+          <div
+            onClick={handleClick}
+            className="bg-red-300 rounded-lg p-6 shadow hover:scale-105 transition-transform cursor-pointer"
+          >
+            <h3 className="text-lg font-semibold">Huevos</h3>
+          </div>
+          <div
+            onClick={handleClick}
+            className="bg-blue-300 rounded-lg p-6 shadow hover:scale-105 transition-transform cursor-pointer"
+          >
+            <h3 className="text-lg font-semibold">Bebidas</h3>
+          </div>
+
+          {/* Agrega más elementos según sea necesario */}
+        </div>
       </div>
-    </div>
-  </section>
-);
+    </section>
+  );
+};
 
 export default ProductsSection;

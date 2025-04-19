@@ -7,7 +7,7 @@ const Servicios = () => {
         <h2 className="text-3xl font-bold mb-8 text-center">Servicios</h2>
         <div className="flex flex-col md:flex-row justify-center gap-8">
           <div className="flex-1 p-6 border rounded-lg hover:shadow-lg transition-shadow duration-300">
-            <h3 className="text-2xl font-semibold mb-4 text-center">
+            <h3 className="text-7xl **:font-semibold mb-4 text-center">
               Entrega Rápida
             </h3>
             <p className="text-center">
